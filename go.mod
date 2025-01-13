@@ -1,5 +1,5 @@
-module github.com/rvinnie/yookassa-sdk-go
+module github.com/gurovCode/yookassa-sdk-go
 
-go 1.19
+go 1.23.4
 
-require github.com/google/uuid v1.3.1
+require github.com/google/uuid v1.6.0
