@@ -43,7 +43,7 @@ type Payment struct {
 
 	// Payment method used for this payment for QR.
 	PaymentMethodData PaymentMethoder `json:"payment_method_data,omitempty"`
-	
+
 	// Time of order creation, based on UTC and specified in the ISO 8601 format.
 	// Example: 2017-11-03T11:52:31.827Z
 	CapturedAt *time.Time `json:"captured_at,omitempty"`
@@ -100,4 +100,6 @@ type Payment struct {
 	// The identifier of the customer in your system, such as email address or phone number.
 	// No more than 200 characters.
 	MerchantCustomerID string `json:"merchant_customer_id,omitempty" binding:"max=200"`
+
+	SavePaymentMethod *bool `json:"save_payment_method,omitempty"`
 }
