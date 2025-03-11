@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246ed555-9acb-4b8b-a5a1-03c27ab922b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yookassa/payment/payment.go" beforeDir="false" afterPath="$PROJECT_DIR$/yookassa/payment/payment.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

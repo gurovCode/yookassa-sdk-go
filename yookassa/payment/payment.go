@@ -102,4 +102,6 @@ type Payment struct {
 	MerchantCustomerID string `json:"merchant_customer_id,omitempty" binding:"max=200"`
 
 	SavePaymentMethod *bool `json:"save_payment_method,omitempty"`
+
+	PaymentMethodID *string `json:"payment_method_id,omitempty"`
 }
