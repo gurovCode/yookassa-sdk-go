@@ -18,6 +18,8 @@ const (
 	CancelEndpoint  = "cancel"
 )
 
+var ErrEmptyConfirmation = errors.New("empty confirmation url")
+
 // PaymentHandler works with requests related to Payments.
 type PaymentHandler struct {
 	client         *Client
@@ -131,7 +133,7 @@ func (p *PaymentHandler) CreatePayment(payment *yoopayment.Payment) (*yoopayment
 	}
 
 	if paymentResponse.Confirmation == nil {
-		return nil, errors.New("empty confirmation url")
+		return nil, ErrEmptyConfirmation
 	}
 	return paymentResponse, nil
 }
@@ -225,7 +227,7 @@ func (p *PaymentHandler) FindPayments(
 // ParsePaymentLink retrieves a link to the Payment from the Payment entity.
 func (p *PaymentHandler) ParsePaymentLink(payment *yoopayment.Payment) (string, error) {
 	if payment == nil || payment.Confirmation == nil {
-		return "", errors.New("empty confirmation url")
+		return "", ErrEmptyConfirmation
 	}
 
 	link, ok := payment.Confirmation.(map[string]interface{})["confirmation_url"].(string)
